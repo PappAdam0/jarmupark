@@ -11,6 +11,8 @@ namespace jarmupark
         private string szin, tipus;
         private double uzemAnyag, fogyaszt, km, megtehetoKm;
 
+     
+
         public Auto(string szin, string tipus, double fogyaszt)
         {
             this.szin = szin;
@@ -26,11 +28,14 @@ namespace jarmupark
         {
             megtehetoKm = uzemAnyag / fogyaszt * 100;
         }
+        public double MEGTEHETOKM { get { return megtehetoKm; } }
         public void Tankol(double mennyit)
         {
             uzemAnyag += mennyit;
             Megteheto();
         }
+        public double UZEMANYAG { get { return uzemAnyag; }  }
+        public double FOGYASZT { get { return fogyaszt; } }
 
         public void Megy(double km)
         {
@@ -39,13 +44,20 @@ namespace jarmupark
             Megteheto();
         }
 
+        public double KM
+        {
+            get { return km; }
+        }
+
+
+
         public void Allapot()
         {
             Console.WriteLine("-----------------------------------");
             Console.WriteLine($"{tipus} - {szin}");
-            Console.WriteLine($"Km óra: {km} km");
-            Console.WriteLine($"Üzemanyag: {uzemAnyag} l");
-            Console.WriteLine($"Megtehető km: {megtehetoKm} km");
+            Console.WriteLine($"Km óra: {KM} km");
+            Console.WriteLine($"Üzemanyag: {UZEMANYAG} l");
+            Console.WriteLine($"Megtehető km: {MEGTEHETOKM} km");
             Console.WriteLine("-----------------------------------");
         }
     }

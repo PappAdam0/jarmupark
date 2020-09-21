@@ -22,9 +22,9 @@ namespace jarmupark
             Console.WriteLine("Mennyit menjen a lada?");
             int km = int.Parse(Console.ReadLine());
             lada.Megy(km);
-            lada.Allapot();
-
-
+           // lada.Allapot();
+            Console.WriteLine($"Maradt {lada.UZEMANYAG} l - {lada.MEGTEHETOKM} km");
+           
 
             Console.ReadKey();
         }
